@@ -6,7 +6,7 @@
 
 Neste projeto, desenvolveremos um Sistema de Gerenciamento de Vendas para uma Loja de Roupas. Nosso sistema será composto por classes básicas que representarão os principais elementos do negócio, como Produto, Categoria, Cliente e Venda.
 
-# Classes Básicas
+## Classes Básicas
 
 **Produto**
   - Atributos: Nome, Descrição, Preço e Categoria.
