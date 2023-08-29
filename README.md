@@ -1,7 +1,6 @@
 # Sistema de Gerenciamento de Vendas de Loja de Roupas
 
-![](https://images-ext-1.discordapp.net/external/WcdXgPtneUjuDRsgxHXKM7_fUNSeD9va8Jqfi7OxfXg/https/i.pinimg.com/564x/5b/cd/e7/5bcde7f766f2443609e837e51786cd43.jpg?width=350&height=350)
-![](https://images-ext-1.discordapp.net/external/ecuF8DdsjeNUP_CpeI5ru9tACWeyHBSjeDWHXBIh3do/https/i.pinimg.com/564x/29/f0/73/29f0737323a30a9d6fca5fea57fd8068.jpg?width=350&height=350)
+![](https://images-ext-1.discordapp.net/external/WcdXgPtneUjuDRsgxHXKM7_fUNSeD9va8Jqfi7OxfXg/https/i.pinimg.com/564x/5b/cd/e7/5bcde7f766f2443609e837e51786cd43.jpg?width=350&height=350)![](https://images-ext-1.discordapp.net/external/ecuF8DdsjeNUP_CpeI5ru9tACWeyHBSjeDWHXBIh3do/https/i.pinimg.com/564x/29/f0/73/29f0737323a30a9d6fca5fea57fd8068.jpg?width=350&height=350)
 
 ## Modelo de Negócio
 
