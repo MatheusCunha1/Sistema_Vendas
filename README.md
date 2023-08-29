@@ -12,17 +12,17 @@ Neste projeto, desenvolveremos um Sistema de Gerenciamento de Vendas para uma Lo
   - Atributos: Nome, Descrição, Preço e Categoria.
   - Representa os produtos disponíveis na loja.
 
-## Categoria
-Atributos: Nome e Descrição.
-Representa as categorias de produtos disponíveis na loja.
+**Categoria**:
+- Atributos: Nome e Descrição.
+- Representa as categorias de produtos disponíveis na loja.
 
-## Cliente
-Atributos: Nome, Sobrenome, Endereço e Número de Telefone.
-Representa os clientes da loja.
+**Cliente**:
+- Atributos: Nome, Sobrenome, Endereço e Número de Telefone.
+- Representa os clientes da loja.
 
-## Venda
-Atributos: Cliente, Produtos Vendidos, Data da Venda e Valor Total da Compra.
-Representa a venda de produtos para um cliente em um determinado momento.
+**Venda**:
+- Atributos: Cliente, Produtos Vendidos, Data da Venda e Valor Total da Compra.
+- Representa a venda de produtos para um cliente em um determinado momento.
 
 ## Requisitos
 Implementar todas as classes, respeitando os princípios da programação orientada a objetos.
