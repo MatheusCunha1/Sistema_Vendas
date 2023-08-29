@@ -9,17 +9,9 @@ Neste projeto, desenvolveremos um Sistema de Gerenciamento de Vendas para uma Lo
 
 # Classes Básicas
 
-- **Produto**: 
-  -Atributos: Nome, Descrição, Preço e Categoria.
-  -Representa os produtos disponíveis na loja.
-
-  - **Classe Pessoa**: 
-  - Propriedades: Nome (string), Idade (int). 
-  - Métodos: ImprimirDados().
-- **Classe Produto**: 
-  - Propriedades: Nome (string), Preco (decimal), Quantidade (int). 
-  - Métodos: CalcularTotal().
-... [e assim por diante para as outras classes e suas propriedades/métodos]
+  - **Produto**: 
+  - Atributos: Nome, Descrição, Preço e Categoria.
+  - Representa os produtos disponíveis na loja.
 
 ## Categoria
 Atributos: Nome e Descrição.
