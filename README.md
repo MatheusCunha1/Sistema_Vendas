@@ -8,7 +8,7 @@ Neste projeto, desenvolveremos um Sistema de Gerenciamento de Vendas para uma Lo
 
 # Classes Básicas
 
-  - **Produto**: 
+**Produto**: 
   - Atributos: Nome, Descrição, Preço e Categoria.
   - Representa os produtos disponíveis na loja.
 
