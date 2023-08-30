@@ -11,7 +11,7 @@ namespace GF_1
     {
         static void Main(string[] args)
         {
-            bool clienteAdicionado1 = Cliente.AdicionarCliente(clientes, "João", "Silva", "Rua A, 123", "(11) 1234-5678");
+            
             int op;
             Console.WriteLine("|======|Sistema MAPA|=======|");
             Console.WriteLine("| [1] Adicionar Cliente     |");
@@ -26,17 +26,7 @@ namespace GF_1
                 {
                     case 1:
                         Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
-                        List<Cliente> clientes = new List<Cliente>();
-                        if (clienteAdicionado1)
-                        {
-                            Console.WriteLine("Cliente 1 foi adicionado com sucesso.");
-                        }
-
-                        if (clienteAdicionado2)
-                        {
-                            Console.WriteLine("Cliente 2 foi adicionado com sucesso.");
-                        }
-
+                       
                         break;
 
                     default:
@@ -50,6 +40,4 @@ namespace GF_1
             }
         }
     }
-
-}
 }
