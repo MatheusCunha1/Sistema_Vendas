@@ -42,12 +42,17 @@ namespace GF_1
             return numeroTelefone;
         }
 
-        public void MostrarCliente()
+        public static void ExibirClientes(List<Cliente> clientes)
         {
-            Console.WriteLine("Nome: " + nome);
-            Console.WriteLine("Sobrenome: " + sobrenome);
-            Console.WriteLine("Endereço: " + endereco);
-            Console.WriteLine("Número de Telefone: " + numeroTelefone);
+            Console.WriteLine("Clientes cadastrados:");
+            foreach (var cliente in clientes)
+            {
+                Console.WriteLine("Nome: " + cliente.nome);
+                Console.WriteLine("Sobrenome: " + cliente.sobrenome);
+                Console.WriteLine("Endereço: " + cliente.endereco);
+                Console.WriteLine("Número de Telefone: " + cliente.numeroTelefone);
+                Console.WriteLine("===============");
+            }
         }
 
         public static bool AdicionarCliente(List<Cliente> listaClientes, string nome, string sobrenome, string endereco, string numeroTelefone)

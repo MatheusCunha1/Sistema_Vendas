@@ -8,7 +8,8 @@ namespace GF_1
         static void Main(string[] args)
         {
             List<Cliente> listaClientes = new List<Cliente>();
-
+            List<Categoria> listaCategorias = new List<Categoria>();
+            
             int op;
 
             do
@@ -18,8 +19,9 @@ namespace GF_1
                 Console.WriteLine("| [1] Adicionar Cliente     |");
                 Console.WriteLine("| [2] Mostrar Cliente       |");
                 Console.WriteLine("| [3] Adicionar Categoria   |");
-                Console.WriteLine("| [4] Realizar Venda        |");
-                Console.WriteLine("| [5] Sair                  |");
+                Console.WriteLine("| [4] Mostrar Categorias    |");  
+                Console.WriteLine("| [5] Realizar Venda        |");
+                Console.WriteLine("| [6] Sair                  |");  
                 Console.WriteLine("|===========================|");
                 Console.Write("Digite a opção desejada: ");
 
@@ -32,7 +34,6 @@ namespace GF_1
                             Console.ForegroundColor = ConsoleColor.Blue;
                             Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
                             Console.ResetColor();
-
                             do
                             {
                                 Console.Write("Nome: ");
@@ -50,11 +51,52 @@ namespace GF_1
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Cliente.AdicionarCliente(listaClientes, nome, sobrenome, endereco, numeroTelefone);
                                 Console.ResetColor();
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                                Console.Write("Pressione Enter para continuar!");
+                                Console.ReadKey();
+                                Console.ResetColor();
 
+                                Console.Clear();
                                 Console.WriteLine("Deseja adicionar mais um cliente? (S/N)");
                             } while (Console.ReadLine().Trim().ToUpper() == "S");
+                            
                             break;
+                        case 2:
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("Opção 2 selecionada: Mostrar Clientes");
+                            Console.ResetColor();
 
+                            Cliente.ExibirClientes(listaClientes);
+                            Console.ReadLine();
+                            break;
+                        case 3:
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("Opção 3 selecionada: Adicionar Categoria");
+                            Console.ResetColor();
+
+                            Console.Write("Nome da Categoria: ");
+                            string nomeCategoria = Console.ReadLine();
+
+                            Console.Write("Descrição da Categoria: ");
+                            string descricaoCategoria = Console.ReadLine();
+
+                            listaCategorias.Add(new Categoria { Nome = nomeCategoria, Descricao = descricaoCategoria });
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Categoria adicionada com sucesso!");
+                            Console.ResetColor();
+                            Console.ReadLine();
+                            break;
+                        case 4:
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("Opção 4 selecionada: Mostrar Categorias");
+                            Console.ResetColor();
+
+                            Categoria.ExibirCategorias(listaCategorias);
+                            Console.ReadLine();
+                            break;
                         default:
                             Console.Clear();
                             Console.WriteLine("Opção inválida");
@@ -63,11 +105,11 @@ namespace GF_1
                 }
                 else
                 {
-                    Console.Clear(); // Limpa a tela
+                    Console.Clear();
                     Console.WriteLine("Entrada inválida. Por favor, digite um número válido.");
                 }
 
-            } while (op != 5); // Continue o loop enquanto a opção não for "Sair"
+            } while (op != 6);
 
             Console.WriteLine("Saindo do programa.");
             Console.ReadKey();
