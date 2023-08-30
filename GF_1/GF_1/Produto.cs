@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace GF_1
 {
-    internal class Produto
+
+    class Produto
     {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
+        public decimal Preco { get; set; }
+    
     }
+
 }
