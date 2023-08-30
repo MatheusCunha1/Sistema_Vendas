@@ -10,7 +10,8 @@ namespace GF_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Paulo");
+
+
         }
     }
 }
