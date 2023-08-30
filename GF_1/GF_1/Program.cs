@@ -27,6 +27,10 @@ namespace GF_1
                 {
                     case 1:
                         Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
+                        Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
+                        Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
+                        Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
+                        Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
 
                         break;
 
