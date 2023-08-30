@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GF_1
 {
@@ -11,38 +7,112 @@ namespace GF_1
     {
         static void Main(string[] args)
         {
-
-
+            List<Cliente> listaClientes = new List<Cliente>();
+            List<Categoria> listaCategorias = new List<Categoria>();
+            
             int op;
-            Console.WriteLine("|======|Sistema MAPA|=======|");
-            Console.WriteLine("| [1] Adicionar Cliente     |");
-            Console.WriteLine("| [2] Adicionar Produto     |");
-            Console.WriteLine("| [3] Adicionar Categoria   |");
-            Console.WriteLine("| [4] Realizar Venda        |");
-            Console.WriteLine("|===========================|");
-            Console.Write("Digite a opção desejada: ");
-            if (int.TryParse(Console.ReadLine(), out op))
+
+            do
             {
-                switch (op)
+                Console.Clear();
+                Console.WriteLine("|======|Sistema MAPA|=======|");
+                Console.WriteLine("| [1] Adicionar Cliente     |");
+                Console.WriteLine("| [2] Mostrar Cliente       |");
+                Console.WriteLine("| [3] Adicionar Categoria   |");
+                Console.WriteLine("| [4] Mostrar Categorias    |");  
+                Console.WriteLine("| [5] Realizar Venda        |");
+                Console.WriteLine("| [6] Sair                  |");  
+                Console.WriteLine("|===========================|");
+                Console.Write("Digite a opção desejada: ");
+
+                if (int.TryParse(Console.ReadLine(), out op))
                 {
-                    case 1:
-                        Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
-                        Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
-                        Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
-                        Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
-                        Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
+                    switch (op)
+                    {
+                        case 1:
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("Opção 1 selecionada: Adicionar Cliente");
+                            Console.ResetColor();
+                            do
+                            {
+                                Console.Write("Nome: ");
+                                string nome = Console.ReadLine();
 
-                        break;
+                                Console.Write("Sobrenome: ");
+                                string sobrenome = Console.ReadLine();
 
-                    default:
-                        Console.WriteLine("Opção inválida");
-                        break;
+                                Console.Write("Endereço: ");
+                                string endereco = Console.ReadLine();
+
+                                Console.Write("Número de Telefone: ");
+                                string numeroTelefone = Console.ReadLine();
+
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Cliente.AdicionarCliente(listaClientes, nome, sobrenome, endereco, numeroTelefone);
+                                Console.ResetColor();
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                                Console.Write("Pressione Enter para continuar!");
+                                Console.ReadKey();
+                                Console.ResetColor();
+
+                                Console.Clear();
+                                Console.WriteLine("Deseja adicionar mais um cliente? (S/N)");
+                            } while (Console.ReadLine().Trim().ToUpper() == "S");
+                            
+                            break;
+                        case 2:
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("Opção 2 selecionada: Mostrar Clientes");
+                            Console.ResetColor();
+
+                            Cliente.ExibirClientes(listaClientes);
+                            Console.ReadLine();
+                            break;
+                        case 3:
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("Opção 3 selecionada: Adicionar Categoria");
+                            Console.ResetColor();
+
+                            Console.Write("Nome da Categoria: ");
+                            string nomeCategoria = Console.ReadLine();
+
+                            Console.Write("Descrição da Categoria: ");
+                            string descricaoCategoria = Console.ReadLine();
+
+                            listaCategorias.Add(new Categoria { Nome = nomeCategoria, Descricao = descricaoCategoria });
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Categoria adicionada com sucesso!");
+                            Console.ResetColor();
+                            Console.ReadLine();
+                            break;
+                        case 4:
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("Opção 4 selecionada: Mostrar Categorias");
+                            Console.ResetColor();
+
+                            Categoria.ExibirCategorias(listaCategorias);
+                            Console.ReadLine();
+                            break;
+                        default:
+                            Console.Clear();
+                            Console.WriteLine("Opção inválida");
+                            break;
+                    }
                 }
-            }
-            else
-            {
-                Console.WriteLine("Entrada inválida. Por favor, digite um número válido.");
-            }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Entrada inválida. Por favor, digite um número válido.");
+                }
+
+            } while (op != 6);
+
+            Console.WriteLine("Saindo do programa.");
+            Console.ReadKey();
         }
     }
 }
