@@ -6,21 +6,50 @@ using System.Threading.Tasks;
 
 namespace GF_1
 {
+    
     public class Cliente
     {
-        public string Nome { get; set; }
-        public string Sobrenome { get; set; }
-        public string Endereco { get; set; }
-        public string NumeroTelefone { get; set; }
+        private string nome;
+        private string sobrenome;
+        private string endereco;
+        private string numeroTelefone;
 
         public Cliente(string nome, string sobrenome, string endereco, string numeroTelefone)
         {
-            Nome = nome;
-            Sobrenome = sobrenome;
-            Endereco = endereco;
-            NumeroTelefone = numeroTelefone;
+            this.nome = nome;
+            this.sobrenome = sobrenome;
+            this.endereco = endereco;
+            this.numeroTelefone = numeroTelefone;
         }
-        
+
+        public string GetNome()
+        {
+            return nome;
+        }
+
+        public string GetSobrenome()
+        {
+            return sobrenome;
+        }
+
+        public string GetEndereco()
+        {
+            return endereco;
+        }
+
+        public string GetNumeroTelefone()
+        {
+            return numeroTelefone;
+        }
+
+        public void MostrarCliente()
+        {
+            Console.WriteLine("Nome: " + nome);
+            Console.WriteLine("Sobrenome: " + sobrenome);
+            Console.WriteLine("Endereço: " + endereco);
+            Console.WriteLine("Número de Telefone: " + numeroTelefone);
+        }
+
         public static bool AdicionarCliente(List<Cliente> listaClientes, string nome, string sobrenome, string endereco, string numeroTelefone)
         {
             try
@@ -35,14 +64,12 @@ namespace GF_1
                 Console.WriteLine("Erro ao adicionar cliente: " + e.Message);
                 return false;
             }
+
+
         }
-
-
-
-
-
     }
-
 }
+
+
 
             
