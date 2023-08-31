@@ -9,7 +9,8 @@ namespace GF_1
         {
             List<Cliente> listaClientes = new List<Cliente>();
             List<Categoria> listaCategorias = new List<Categoria>();
-            
+            List<Produto> listaProdutos = new List<Produto>();
+
             int op;
             do
             {
@@ -19,8 +20,8 @@ namespace GF_1
                 Console.WriteLine("| [2] Mostrar Cliente       |");
                 Console.WriteLine("| [3] Adicionar Categoria   |");
                 Console.WriteLine("| [4] Mostrar Categorias    |");  
-                Console.WriteLine("| [5] Realizar Venda        |");
-                Console.WriteLine("| [6] Sair                  |");  
+                Console.WriteLine("| [5] Adicionar Produto     |");  
+                Console.WriteLine("| [6] Mostrar Produto       |");  
                 Console.WriteLine("|===========================|");
                 Console.Write("Digite a opção desejada: ");
 
@@ -96,6 +97,61 @@ namespace GF_1
                             Categoria.ExibirCategorias(listaCategorias);
                             Console.ReadLine();
                             break;
+                        case 5:
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("Opção 5 selecionada: Adicionar Produto");
+                            Console.ResetColor();
+
+                            Console.Write("Nome do Produto: ");
+                            string nomeProduto = Console.ReadLine();
+
+                            Console.Write("Descrição do Produto: ");
+                            string descricaoProduto = Console.ReadLine();
+
+                            Console.Write("Preço do Produto: ");
+                            decimal precoProduto;
+                            while (!decimal.TryParse(Console.ReadLine(), out precoProduto))
+                            {
+                                Console.WriteLine("Preço inválido. Digite um número válido.");
+                                Console.Write("Preço do Produto: ");
+                            }
+
+                            
+                            Console.WriteLine("Categorias disponíveis:");
+                            for (int i = 0; i < listaCategorias.Count; i++)
+                            {
+                                Console.WriteLine($"[{i + 1}] {listaCategorias[i].Nome}");
+                            }
+
+                            int categoriaSelecionada;
+                            while (true)
+                            {
+                                Console.Write("Selecione o número da categoria para associar ao produto: ");
+                                if (int.TryParse(Console.ReadLine(), out categoriaSelecionada) && categoriaSelecionada >= 1 && categoriaSelecionada <= listaCategorias.Count)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Seleção inválida. Digite um número válido.");
+                                }
+                            }
+
+                            Categoria categoriaAssociada = listaCategorias[categoriaSelecionada - 1];
+
+                            int novoProdutoId = listaProdutos.Count + 1;
+                            Produto.AdicionarProduto(listaProdutos, novoProdutoId, nomeProduto, descricaoProduto, precoProduto);
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"Produto '{nomeProduto}' associado à categoria '{categoriaAssociada.Nome}' com sucesso.");
+                            Console.ResetColor();
+
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.Write("Pressione Enter para continuar!");
+                            Console.ResetColor();
+                            Console.ReadKey();
+                            break;
+
                         default:
                             Console.Clear();
                             Console.WriteLine("Opção inválida");

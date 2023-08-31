@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace GF_1
 {
@@ -24,12 +20,11 @@ namespace GF_1
             Descricao = descricao;
             Preco = preco;
         }
-
-        public static bool AdicionarCliente(List<Produto> listaProduto, int id, string nome, string descricao, decimal preco)
+        public static bool AdicionarProduto(List<Produto> listaProduto, int id, string nome, string descricao, decimal preco)
         {
             try
             {
-                Produto novoProduto = new Produto (id,  nome, descricao, preco);
+                Produto novoProduto = new Produto(id, nome, descricao, preco);
                 listaProduto.Add(novoProduto);
                 Console.WriteLine("Produto adicionado com sucesso.");
                 return true;
