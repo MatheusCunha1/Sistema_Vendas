@@ -11,7 +11,6 @@ namespace GF_1
             List<Categoria> listaCategorias = new List<Categoria>();
             
             int op;
-
             do
             {
                 Console.Clear();
