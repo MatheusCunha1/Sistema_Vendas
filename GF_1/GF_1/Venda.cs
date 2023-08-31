@@ -94,6 +94,7 @@ namespace GF_1
                     Console.Clear();
                     Console.WriteLine("ID de produto inválido. Tente novamente.");
                 }
+
             }
 
             // Registrar a venda

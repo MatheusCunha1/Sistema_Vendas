@@ -21,7 +21,7 @@ namespace GF_1
                 Console.WriteLine("| [3] Adicionar Categoria   |");
                 Console.WriteLine("| [4] Mostrar Categorias    |");  
                 Console.WriteLine("| [5] Adicionar Produto     |");  
-                Console.WriteLine("| [6] Mostrar Produto       |");  
+                Console.WriteLine("| [6] Realizar Venda        |");  
                 Console.WriteLine("|===========================|");
                 Console.Write("Digite a opção desejada: ");
 
@@ -152,7 +152,7 @@ namespace GF_1
                             Console.ReadKey();
                             break;
                         // Dentro do loop do menu (antes do while(op != 6))
-                        case 7:
+                        case 6:
                             if (Venda.RealizarVenda(listaClientes, listaProdutos))
                             {
                                 Console.ForegroundColor = ConsoleColor.Green;
