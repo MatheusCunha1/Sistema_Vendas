@@ -151,11 +151,23 @@ namespace GF_1
                             Console.ResetColor();
                             Console.ReadKey();
                             break;
-
-                        default:
-                            Console.Clear();
-                            Console.WriteLine("Opção inválida");
+                        // Dentro do loop do menu (antes do while(op != 6))
+                        case 7:
+                            if (Venda.RealizarVenda(listaClientes, listaProdutos))
+                            {
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("Venda realizada com sucesso!");
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("Erro ao realizar a venda.");
+                            }
+                            Console.ResetColor();
+                            Console.WriteLine("Pressione Enter para continuar.");
+                            Console.ReadLine();
                             break;
+
                     }
                 }
                 else
@@ -168,6 +180,7 @@ namespace GF_1
 
             Console.WriteLine("Saindo do programa.");
             Console.ReadKey();
+
         }
     }
 }
