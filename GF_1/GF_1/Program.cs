@@ -25,7 +25,7 @@ namespace GF_1
                 Console.WriteLine("|===========================|");
                 Console.Write("Digite a opção desejada: ");
 
-                if(int.TryParse(Console.ReadLine(), out op))
+                if (int.TryParse(Console.ReadLine(), out op))
                 {
                     switch (op)
                     {
